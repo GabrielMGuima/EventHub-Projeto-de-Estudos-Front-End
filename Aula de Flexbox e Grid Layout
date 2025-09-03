@@ -1,0 +1,235 @@
+🧪 Laboratório de Programação Frontend
+📚 Universidade de Vassouras
+👨‍🏫 Prof. Rodrigo Ximenes
+🎯 Aula 03 — CSS Avançado + Layout
+📅 Conteúdo da Aula
+Flexbox e Grid Layout
+Pseudo-classes e pseudo-elementos
+Responsividade (media queries)
+Exercício: Landing page responsiva
+🧩 Flexbox e Grid Layout
+O Flexbox e o Grid Layout são módulos CSS modernos para criar layouts flexíveis e responsivos de forma rápida.
+
+Flexbox — Exemplo básico
+
+.container {
+  display: flex;     /* ativa o Flexbox no container */
+  gap: 20px;         /* define espaçamento de 20px entre os itens */
+}
+.item {
+  background: #007acc; /* cor de fundo azul */
+  color: white;        /* cor do texto branca */
+  padding: 15px;       /* espaço interno entre conteúdo e borda */
+  border-radius: 6px;  /* bordas arredondadas */
+  flex: 1;             /* faz cada item ocupar igualmente o espaço disponível */
+}
+  
+Flexbox é ideal para organizar elementos em linha ou coluna, distribuindo o espaço automaticamente.
+Flexbox Froggy — jogo prático Flexbox | Exemplo W3Schools Flexbox
+Grid Layout — Exemplo básico
+
+.grid {
+  display: grid;                 /* ativa o Grid Layout */
+  grid-template-columns: 1fr 2fr 1fr; /* define 3 colunas com proporção 1:2:1 */
+  gap: 15px;                     /* espaçamento entre linhas e colunas */
+}
+.box {
+  background: #eef6fb;           /* cor de fundo clara */
+  padding: 20px;                 /* espaço interno */
+  border-radius: 4px;            /* bordas arredondadas */
+}
+  
+Grid Layout permite criar grades bidimensionais, facilitando layouts complexos.
+CSS Grid Garden — jogo prático Grid | Exemplo W3Schools Grid
+🎨 Pseudo-classes e pseudo-elementos
+:hover — muda o estilo ao passar o mouse (exemplo)
+:focus — muda o estilo ao focar (exemplo)
+::before e ::after — adicionam conteúdo antes/depois do elemento (exemplo)
+
+a:hover {
+  color: #005a99;
+  text-decoration: underline;
+}
+h2::after {
+  content: " ✨";
+  color: #007acc;
+}
+  
+📱 Responsividade (Media Queries)
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;   /* reduz padding para telas pequenas */
+  }
+  h1 {
+    font-size: 24px; /* diminui tamanho da fonte */
+  }
+}
+  
+Exemplo W3Schools Media Queries
+
+📘 Diferença entre Padding, Margin e Border
+
++-------------------------------+
+|           Margin              |
+|  +-------------------------+  |
+|  |         Border          |  |
+|  |  +-------------------+  |  |
+|  |  |      Padding      |  |  |
+|  |  |  +-----------+    |  |  |
+|  |  |  |  Content  |    |  |  |
+|  |  |  +-----------+    |  |  |
+|  |  +-------------------+  |  |
+|  +-------------------------+  |
++-------------------------------+
+  
+CSS Box Model (W3Schools)
+
+🔗 Combinadores CSS
+
+/* Descendant Combinator */
+div p { color: blue; }
+
+/* Child Combinator */
+div > p { color: green; }
+
+/* Next Sibling Combinator */
+h2 + p { font-weight: bold; }
+
+/* Subsequent Sibling Combinator */
+h2 ~ p { font-style: italic; }
+  
+CSS Combinators (W3Schools)
+
+🌐 Recursos Extras
+Guia Flexbox (CSS-Tricks)
+Guia Grid (CSS-Tricks)
+Media Queries (MDN)
+W3Schools — teste de CSS, HTML, JS
+🧭 Projeto EventHub — O que vamos fazer
+No EventHub, vamos criar uma landing page com:
+
+Cabeçalho com logo e menu de navegação usando Flexbox
+Seção de eventos em cards responsivos usando Grid Layout
+Botões "Inscrever-se" com :hover para interatividade
+Layout responsivo com @media queries para celulares e tablets
+Uso de combinadores CSS para aplicar estilos sem classes extras
+💻 Código base EventHub
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>EventHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>EventHub</h1>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">Eventos</a> |
+      <a href="#">Sobre</a> |
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="item">
+        <h2>Evento A</h2>
+        <p>Descrição do evento A</p>
+        <button id="botaoA">Inscrever-se</button>
+      </div>
+      <div class="item">
+        <h2>Evento B</h2>
+        <p>Descrição do evento B</p>
+        <button id="botaoB">Inscrever-se</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 EventHub. Todos os direitos reservados.
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- CSS (css/style.css) -->
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  background: #007acc;
+  color: white;
+  padding: 15px 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.item {
+  background: #eee;
+  padding: 15px;
+  border-radius: 6px;
+  flex: 1;
+}
+
+.item h2 {
+  margin-top: 0;
+}
+
+button {
+  background: #007acc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #005fa3;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  border-top: 1px solid #ccc;
+  margin-top: 30px;
+}
+  
+💾 Commit no Git
+Após finalizar o layout, faça commit no seu repositório local:
+
+
+git add .
+git commit -m "feat: criar layout EventHub com Flexbox, Grid e responsividade"
+git push origin main
+  
